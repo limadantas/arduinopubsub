@@ -110,9 +110,9 @@ void setup(void)
      Serial.println("Conectando em TCP");
    }
    
-   // did that last thing work? sweet, let's do something
+   // Ainda estamos conectados? Vamos fazer alguma coisa
    if(client.connected()) {
-    if (mqttclient.connect("ArduinoUnoClient-CC3000-A2", "iotocean", "NZZOLd0O66oLS0vpajiA123")) {
+    if (mqttclient.connect("ArduinoUnoClient-CC3000-A2")) {
       Serial.println(F("Publicando"));
       mqttclient.publish("/meuprojeto/sensores/debug","A2 está online");
     }
