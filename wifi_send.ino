@@ -114,7 +114,7 @@ void setup(void)
    if(client.connected()) {
     if (mqttclient.connect("ArduinoUnoClient-CC3000-A2", "iotocean", "NZZOLd0O66oLS0vpajiA123")) {
       Serial.println(F("Publicando"));
-      mqttclient.publish("/ocean/sensores/debug","A2 está online");
+      mqttclient.publish("/meuprojeto/sensores/debug","A2 está online");
     }
     else {
       Serial.println(F("Ouve um erro ao conectar-se ao broker"));
@@ -163,11 +163,11 @@ void loop(void) {
     sprintf(v,"Vez: %d",vez-1);
     
     // Vamos publicar :D
-    mqttclient.publish("/ocean/sensores/a2/temperatura", strTemp);delay(100);
-    mqttclient.publish("/ocean/sensores/a2/humidade", strHum);delay(100);
-    mqttclient.publish("/ocean/sensores/a2/gas",gas_buf);delay(100);
-    mqttclient.publish("/ocean/sensores/a2/luminosidade",lum_buf);delay(100);
-    mqttclient.publish("/ocean/sensores/debug/vez",v);
+    mqttclient.publish("/meuprojeto/sensores/a2/temperatura", strTemp);delay(100);
+    mqttclient.publish("/meuprojeto/sensores/a2/humidade", strHum);delay(100);
+    mqttclient.publish("/meuprojeto/sensores/a2/gas",gas_buf);delay(100);
+    mqttclient.publish("/meuprojeto/sensores/a2/luminosidade",lum_buf);delay(100);
+    mqttclient.publish("/meuprojeto/sensores/debug/vez",v);
   }
   delay(500);
 }
