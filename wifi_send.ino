@@ -266,7 +266,7 @@ float pegaTensao(int porta) {
   return sensorValue * (5.0 / 1023.0);
 }
 
-// Mede a luminosidade do ambiente em LUX. R = resistencia do divisor de tensao em KOhms
+// Mede a luminosidade do ambiente em LUX. R = resistencia do divisor de tensao em KOhms. Me baseei em http://emant.com/316002.page
 float pegaLuminosidade (int porta, float r) {
   float tensao = pegaTensao(porta);
   return ((2500/tensao)-500)/r;
